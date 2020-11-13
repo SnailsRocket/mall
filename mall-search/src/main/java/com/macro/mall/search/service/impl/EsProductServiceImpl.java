@@ -60,6 +60,7 @@ public class EsProductServiceImpl implements EsProductService {
     @Override
     public int importAll() {
         List<EsProduct> esProductList = productDao.getAllEsProductList(null);
+//        将数据库中所有的商品信息save到ElasticSearch里面  这个saveAll methods 是继承自 CrudRepository 这个接口
         Iterable<EsProduct> esProductIterable = productRepository.saveAll(esProductList);
         Iterator<EsProduct> iterator = esProductIterable.iterator();
         int result = 0;
@@ -72,6 +73,7 @@ public class EsProductServiceImpl implements EsProductService {
 
     @Override
     public void delete(Long id) {
+//        这个delete 也是继承 CrudRepository 这个接口
         productRepository.deleteById(id);
     }
 
@@ -99,9 +101,17 @@ public class EsProductServiceImpl implements EsProductService {
         }
     }
 
+    /**
+     *
+     * @param keyword 关键字
+     * @param pageNum 当前页数
+     * @param pageSize 总页数
+     * @return
+     */
     @Override
     public Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize) {
         Pageable pageable = PageRequest.of(pageNum, pageSize);
+//       name商品名称  subTitle商品标题   keyword 商品关键字  pageable 分页信息
         return productRepository.findByNameOrSubTitleOrKeywords(keyword, keyword, keyword, pageable);
     }
 

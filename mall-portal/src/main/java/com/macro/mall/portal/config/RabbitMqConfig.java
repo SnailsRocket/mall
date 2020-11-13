@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 消息队列相关配置
- * Created by macro on 2018/9/14.
+ * 只有在Config类和启动类里面才能配置Bean
+ *
  */
 @Configuration
 public class RabbitMqConfig {
@@ -44,6 +45,7 @@ public class RabbitMqConfig {
 
     /**
      * 订单延迟队列（死信队列）
+     * 死信队列
      */
     @Bean
     public Queue orderTtlQueue() {

@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * 订单管理Controller
- * Created by macro on 2018/10/11.
+ * Order Manager server
  */
 @Controller
 @Api(tags = "OmsOrderController", description = "订单管理")
@@ -24,6 +24,13 @@ public class OmsOrderController {
     @Autowired
     private OmsOrderService orderService;
 
+    /**
+     *  第一次见在请求参数里面设置 初始值，如果传过来的值为null/0 ，那么使用defaultValue
+     * @param queryParam 请求参数
+     * @param pageSize
+     * @param pageNum
+     * @return
+     */
     @ApiOperation("查询订单")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody

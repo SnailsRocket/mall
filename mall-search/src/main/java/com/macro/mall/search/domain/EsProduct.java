@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 搜索中的商品信息
- * Created by macro on 2018/6/19.
+ *
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

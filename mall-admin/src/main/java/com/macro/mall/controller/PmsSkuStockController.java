@@ -13,7 +13,10 @@ import java.util.List;
 
 /**
  * sku库存Controller
- * Created by macro on 2018/4/27.
+ * SKU  库存进出计量单位 (买家购买，卖家进货，供应商备货，工厂生产都是依据SKU)，
+ * SPU  不会影响到库存和价格的属性，又叫关键属性
+ * 一个SPU 包含若干个 SKU
+ *
  */
 @Controller
 @Api(tags = "PmsSkuStockController", description = "sku商品库存管理")

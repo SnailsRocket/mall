@@ -12,16 +12,19 @@ import org.springframework.validation.FieldError;
 
 /**
  * HibernateValidator错误结果处理切面
+ *  使用Spring 的 AOP 切面  切面 切点
  *
  */
 @Aspect
 @Component
 @Order(2)
 public class BindingResultAspect {
+//    设置切点
     @Pointcut("execution(public * com.macro.mall.controller.*.*(..))")
     public void BindingResult() {
     }
 
+//    切面
     @Around("BindingResult()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();

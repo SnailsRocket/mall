@@ -33,6 +33,14 @@ public class UmsMemberController {
     @Autowired
     private UmsMemberService memberService;
 
+    /**
+     * 为什么不用 DTO接收前端传过来的对象，如果修改需求直接加参数，不用修改对象
+     * @param username
+     * @param password
+     * @param telephone
+     * @param authCode
+     * @return
+     */
     @ApiOperation("会员注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody

@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 /**
  * 用户登录参数
  * Created by macro on 2018/4/26.
+ * @ApiModelProperty 用于表示model属性的说明或者数据的修改
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

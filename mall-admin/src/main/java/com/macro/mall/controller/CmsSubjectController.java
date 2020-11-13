@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * 商品专题Controller
- * Created by macro on 2018/6/1.
+ * Swagger 的注解 @Api
  */
 @Controller
 @Api(tags = "CmsSubjectController", description = "商品专题管理")

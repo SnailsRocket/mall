@@ -54,6 +54,12 @@ public class UmsAdminController {
         return CommonResult.success(umsAdmin);
     }
 
+    /**
+     * login param 怎么只有username 和 password 没有验证码？
+     * @param umsAdminLoginParam
+     * @param result
+     * @return
+     */
     @ApiOperation(value = "登录以后返回token")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody

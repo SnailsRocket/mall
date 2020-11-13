@@ -48,8 +48,8 @@ public class OmsOrderServiceImpl implements OmsOrderService {
                     OmsOrderOperateHistory history = new OmsOrderOperateHistory();
                     history.setOrderId(omsOrderDeliveryParam.getOrderId());
                     history.setCreateTime(new Date());
-                    history.setOperateMan("后台管理员");
-                    history.setOrderStatus(2);
+                    history.setOperateMan("后台管理员"); // 这个到时候需要具体到哪一个后台操作人员，不能写死数据
+                    history.setOrderStatus(2);  // 常规的，像那些delete 也是修改状态，而不是硬删除
                     history.setNote("完成发货");
                     return history;
                 }).collect(Collectors.toList());
@@ -80,7 +80,7 @@ public class OmsOrderServiceImpl implements OmsOrderService {
     @Override
     public int delete(List<Long> ids) {
         OmsOrder record = new OmsOrder();
-        record.setDeleteStatus(1);
+        record.setDeleteStatus(1); // 这里跟就是直接修改状态，软删除
         OmsOrderExample example = new OmsOrderExample();
         example.createCriteria().andDeleteStatusEqualTo(0).andIdIn(ids);
         return orderMapper.updateByExampleSelective(record, example);

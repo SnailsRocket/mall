@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * MyBatis相关配置
- * Created by macro on 2019/4/8.
+ * MapperScan  扫描操作数据库的xml文件
  */
 @Configuration
 @EnableTransactionManagement

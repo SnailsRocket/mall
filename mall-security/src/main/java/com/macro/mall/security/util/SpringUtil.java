@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 
 /**
  * Spring工具类
- * Created by macro on 2020/3/3.
+ *
  */
 @Component
 public class SpringUtil implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
 
-    // 获取applicationContext
+    // 获取applicationContext SpringApplication 的上下文对象
     public static ApplicationContext getApplicationContext() {
         return applicationContext;
     }

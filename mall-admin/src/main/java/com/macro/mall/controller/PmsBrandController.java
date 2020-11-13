@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 品牌功能Controller
- * Created by macro on 2018/4/26.
+ * 品牌功能Controller  Brand  商品品牌
+ * Product manager server
+ * 这个里面需要将 Oms  和 Pms 分在不同文件夹
  */
 @Controller
 @Api(tags = "PmsBrandController", description = "商品品牌管理")

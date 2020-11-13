@@ -33,6 +33,7 @@ public class MallSecurityConfig extends SecurityConfig {
     @Autowired
     private UmsResourceService resourceService;
 
+//    这个@Beam注解，可以在Config类 和 SpringBootApplication启动类 里面使用
     @Bean
     public UserDetailsService userDetailsService() {
         //获取登录用户信息

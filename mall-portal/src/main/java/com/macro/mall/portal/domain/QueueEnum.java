@@ -4,7 +4,8 @@ import lombok.Getter;
 
 /**
  * 消息队列枚举配置
- * Created by macro on 2018/9/14.
+ * 之前的解决方案是在和交换机写在一起
+ * 但是一般为了分的更细，将定义消息队列，与绑定交换机分成两个类
  */
 @Getter
 public enum QueueEnum {
@@ -22,7 +23,8 @@ public enum QueueEnum {
      */
     private String exchange;
     /**
-     * 队列名称
+     * 队列名称建议定义成queue_name
+     * 这个
      */
     private String name;
     /**

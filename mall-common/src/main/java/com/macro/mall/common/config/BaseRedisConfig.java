@@ -21,7 +21,9 @@ import java.time.Duration;
 
 /**
  * Redis基础配置
- * Created by macro on 2020/6/19.
+ * 使用Spring data 集成 redis 需要重写redis系列化器(不从写会乱码)
+ *
+ *
  */
 public class BaseRedisConfig {
 
@@ -53,9 +55,9 @@ public class BaseRedisConfig {
     @Bean
     public RedisCacheManager redisCacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory);
-        //设置Redis缓存有效期为1天
+        //设置Redis缓存有效期为5天
         RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisSerializer())).entryTtl(Duration.ofDays(1));
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisSerializer())).entryTtl(Duration.ofDays(5));
         return new RedisCacheManager(redisCacheWriter, redisCacheConfiguration);
     }
 
